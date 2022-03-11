@@ -9,8 +9,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/BufOnly.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-surround'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-rhubarb'
@@ -51,7 +51,7 @@ set wildmenu
 set wildmode=full
 set history=200
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set signcolumn=yes
 
@@ -161,11 +161,22 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-" Set the theme
-colorscheme new-railscasts
-
 " Configure vim-fugitive to have vertical splits
 set diffopt+=vertical
 
 " Change the hover tooltip/box to be white on black
 highlight Pmenu ctermbg=black ctermfg=white
+
+" Turn off autocomment
+augroup auto_comment
+  au!
+  au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
+
+" Enable papercolor-theme
+" toggle light/dark: set background=light/dark
+set t_Co=256
+set background=dark
+colorscheme PaperColor
+let g:lightline = { 'colorscheme': 'PaperColor'  }
+set noshowmode

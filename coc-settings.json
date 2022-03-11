@@ -1,5 +1,13 @@
 {
   "eslint": {
+    "enable": true,
     "autoFixOnSave": true
+  },
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
+    }
   }
 }
