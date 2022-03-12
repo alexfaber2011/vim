@@ -181,3 +181,6 @@ colorscheme PaperColor
 let g:lightline = { 'colorscheme': 'PaperColor'  }
 set noshowmode
 nmap <script> <leader>cob  :<C-U>set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+
+" Force coc.nvim to find the proper node binary
+let g:coc_node_path = trim(system('which node'))
