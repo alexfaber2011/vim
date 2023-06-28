@@ -14,7 +14,6 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-surround'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-rhubarb'
-Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -184,3 +183,6 @@ nmap <script> <leader>cob  :<C-U>set background=<C-R>=&background == "dark" ? "l
 
 " Force coc.nvim to find the proper node binary
 let g:coc_node_path = trim(system('which node'))
+
+" Configure enter key to select auto suggestion
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
