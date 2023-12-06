@@ -186,3 +186,6 @@ let g:coc_node_path = trim(system('which node'))
 
 " Configure enter key to select auto suggestion
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" Duplicate tab
+nnoremap <C-w>t :tab split<CR>
