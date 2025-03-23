@@ -14,6 +14,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-surround'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-rhubarb'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
