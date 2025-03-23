@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-rhubarb'
 Plug 'github/copilot.vim'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -184,9 +185,13 @@ nmap <script> <leader>cob  :<C-U>set background=<C-R>=&background == "dark" ? "l
 
 " Force coc.nvim to find the proper node binary
 let g:coc_node_path = trim(system('which node'))
+let g:coc_enable_debug = 1
 
 " Configure enter key to select auto suggestion
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Duplicate tab
 nnoremap <C-w>t :tab split<CR>
+
+" Enable text wrapping at 80 characters for Markdown files
+autocmd FileType markdown setlocal textwidth=80
